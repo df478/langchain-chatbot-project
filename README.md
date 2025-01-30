@@ -30,6 +30,10 @@ This project follows a **microservices-based architecture**, which simulates a r
 - **Vector Databases:** Using Redis and pgvector significantly improves query response time by leveraging efficient embedding-based searches.  
 - **Docker for Portability:** All services are containerized, allowing seamless deployment across different environments.  
 
+## 🔑 Environment Variables  
+
+Rename the `.env.example` file to `.env` and configure your **OpenAI API Key** before running the application.  
+
 ## 🛠️ Setup  
 
 To run the project, ensure you have **Docker** installed on your system.  
@@ -72,46 +76,5 @@ This script will:
 ✔ Connect to the **PostgreSQL (pgvector) database**  
 ✔ Create necessary tables (if they don’t exist)  
 ✔ Insert the processed embeddings into the vector database  
-
-## 🔑 Environment Variables  
-
-Rename the `.env.example` file to `.env` and configure your **OpenAI API Key** before running the application.  
-
-## 📦 LangChain on Kubernetes (Local Setup)  
-
-1. Run a local Docker Registry  
-
-```bash
-docker run -d -p 5000:5000 --name local-registry registry:2
-```  
-
-2. Build all images locally  
-
-```shell
-docker build -t mypostgres ./postgres
-docker build -t myservice2 ./service2
-docker build -t myservice3 ./service3
-docker build -t myfrontend ./frontend
-```  
-
-3. Tag and push images to the local registry  
-
-```shell
-# For PostgreSQL
-docker tag mypostgres localhost:5000/mypostgres
-docker push localhost:5000/mypostgres
-
-# For API Gateway (Service2)
-docker tag myservice2 localhost:5000/myservice2
-docker push localhost:5000/myservice2
-
-# For Chatbot Engine (Service3)
-docker tag myservice3 localhost:5000/myservice3
-docker push localhost:5000/myservice3
-
-# For Frontend
-docker tag myfrontend localhost:5000/myfrontend
-docker push localhost:5000/myfrontend
-```  
 
 ---
