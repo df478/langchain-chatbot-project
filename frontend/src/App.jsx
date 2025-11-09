@@ -11,7 +11,7 @@ const App = () => {
       const conversationId = localStorage.getItem("conversationId");
       if (conversationId) {
         const response = await fetch(
-          `http://localhost:5000/service2/${conversationId}`
+          `http://srv-alacran--service2-chatbot/service2/${conversationId}`
         );
         const data = await response.json();
         if (!data.error) {
@@ -49,7 +49,7 @@ const App = () => {
     ];
 
     const response = await fetch(
-      `http://localhost:5000/service2/${conversationId}`,
+      `http://srv-alacran--service2-chatbot/service2/${conversationId}`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
