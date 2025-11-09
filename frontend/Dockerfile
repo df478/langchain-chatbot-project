@@ -2,7 +2,7 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-EXPOSE 3000
+EXPOSE 80
 
 COPY ./frontend/package.json ./frontend/package-lock.json ./
 
