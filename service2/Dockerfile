@@ -2,7 +2,7 @@ FROM python:3.10-slim-buster
 
 WORKDIR /app
 
-COPY . /app
+COPY ./service2/. /app
 
 RUN pip install --no-cache-dir fastapi uvicorn redis requests openai
 
