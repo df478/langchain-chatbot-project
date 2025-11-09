@@ -2,7 +2,7 @@ FROM python:3.9-slim-buster
 
 WORKDIR /app
 
-COPY . /app
+COPY ./service3/. /app
 
 RUN pip install --no-cache-dir fastapi uvicorn redis requests openai langchain python-dotenv postgres psycopg2-binary pgvector tiktoken
 
