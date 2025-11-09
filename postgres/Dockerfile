@@ -1,5 +1,9 @@
 FROM postgres:13
 
+ENV POSTGRES_USER=admin
+ENV POSTGRES_PASSWORD=admin
+ENV POSTGRES_DB=vectordb
+
 RUN apt-get update && apt-get upgrade -y && \
     apt-get install -y wget build-essential postgresql-server-dev-13
 
